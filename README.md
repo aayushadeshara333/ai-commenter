@@ -50,9 +50,9 @@ If you are running this project from source:
 
 ## 📦 Packaging
 
-To create a `.vsix` installer:
+To increment the version and create a `.vsix` installer in one step:
 ```bash
-npx @vscode/vsce package
+npm run package
 ```
 
 ---

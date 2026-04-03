@@ -3,7 +3,7 @@
     "displayName": "AI Commenter",
     "publisher": "aayushadeshara",
     "description": "Reads git diffs and generates AI-powered comments explaining the changes.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "repository": {
         "type": "git",
         "url": "https://github.com/aayushadeshara/ai-commenter"
@@ -55,7 +55,8 @@
     "scripts": {
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./"
+        "watch": "tsc -watch -p ./",
+        "package": "npm version patch --no-git-tag-version && npx @vscode/vsce package"
     },
     "devDependencies": {
         "@types/node": "^18.0.0",
