@@ -112,6 +112,7 @@ Rules:
 * Direct and to the point.
 * Do not include pleasantries.
 * Provide only the raw commit message text.
+* Do not include any other text.
 
 DIFF:
 ${diff}`;
