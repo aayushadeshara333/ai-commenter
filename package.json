@@ -1,0 +1,48 @@
+{
+    "name": "ai-commenter",
+    "displayName": "AI Commenter",
+    "publisher": "aayushadeshara",
+    "description": "Reads git diffs and generates AI-powered comments explaining the changes.",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/aayushadeshara/ai-commenter"
+    },
+    "icon": "icon.png",
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "aiCommenter.generate",
+                "title": "AI: Generate Commit Message"
+            }
+        ],
+        "configuration": {
+            "title": "AI Commenter",
+            "properties": {
+                "aiCommenter.mistralApiKey": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Your Mistral AI API Key to generate commit messages."
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "^18.0.0",
+        "@types/vscode": "^1.80.0",
+        "typescript": "^5.1.3"
+    }
+}
