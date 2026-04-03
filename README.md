@@ -1,30 +1,60 @@
-# AI Commenter
+# AI Commenter 🤖
 
-`ai-commenter` is a lightweight VS Code extension that reviews your current uncommitted codebase changes (via `git diff HEAD`) and uses an AI to generate a clean, developer-friendly commit message based on your active code changes.
+**AI Commenter** is a lightweight, productivity-focused VS Code extension that uses Mistral AI to instantly generate professional, authoritative git commit messages based on your uncommitted changes.
 
-## Features
+Stop wasting time thinking of commit titles. Let the AI analyze your code diffs and generate a concise summary formatted exactly how you like it.
 
-- Reads project Git diffs asynchronously.
-- Connects to Mistral AI APIs (or drop-in alternatives) using native `fetch`.
-- Provides loading states using native VS Code Notifications.
-- Automatically copies the formatted multi-line AI commit message directly to your clipboard.
+---
 
-## 🚀 Setup Instructions
+## ✨ Features
 
-1. **Install Dependencies**: Open your terminal in the directory and run:
-   ```bash
-   npm install
-   ```
-2. **Add API Key**: Open `src/extension.ts` and locate the `generateAIComment` function. Update `YOUR_API_KEY_HERE` with your actual Mistral AI API Key.
-   *Note: Without a key, an automatic mock response will be provided to easily test the UI integration!*
+- **Mistral AI Powered**: Leverages the high-performance `mistral-small-latest` model for smart code analysis.
+- **Context-Aware**: Automatically detects your current Git branch and prepends it to the commit message in the `[branch] - message` format.
+- **One-Click Generation**: Use the Command Palette to generate a message in seconds.
+- **Smart Formatting**: Generates authoritative, senior-level commit messages (max 15 words) and copies them directly to your clipboard.
+- **Flexible Workspace**: Works even with no active editor open—it analyzes your whole staged/unstaged workspace diff.
 
-## 🛠️ Testing the Extension (Running it locally)
+---
 
-1. Open the project folder in VS Code.
-2. Press **`F5`**. This will compile the TypeScript code and launch a new **"Extension Development Host"** window.
-3. In the new window, make sure you open a folder that is part of a Git repository.
-4. **Make a file change** but do not commit it.
-5. While actively editing the changed file, open the Command Palette (**`Cmd+Shift+P`** / **`Ctrl+Shift+P`**).
-6. Type and select **`AI: Generate Commit Message`**.
+## 🚀 How to Use
 
-You should see a loading notification pop up, and 1-2 seconds later, an AI commit message for your changes will be copied to your clipboard ready to paste!
+1. **Make Changes**: Edit your code and save your files.
+2. **Open Command Palette**: Press `Cmd + Shift + P` (Mac) or `Ctrl + Shift + P` (Windows).
+3. **Run AI Commenter**: Search for **AI: Generate Commit Message**.
+4. **Paste!**: A loading notification will appear. Once finished, your commit message is copied to your clipboard. Just paste it (`Cmd + V`) into your Git commit input or terminal!
+
+---
+
+## ⚙️ Configuration
+
+To use this extension, you need a **Mistral AI API Key**.
+
+1. Go to **Settings** (`Cmd + ,`).
+2. Search for `aiCommenter`.
+3. Enter your key in the **Mistral Api Key** field.
+
+> **Tip**: If you haven't set a key yet, the extension will provide a helpful button to open settings directly for you.
+
+---
+
+## 🛠️ Local Development (For Contributors)
+
+If you are running this project from source:
+
+1. Clone the repository.
+2. Run `npm install` to get dependencies.
+3. Press `F5` to open the **Extension Development Host**.
+4. Test the command `AI: Generate Commit Message` in a git-initialized project.
+
+---
+
+## 📦 Packaging
+
+To create a `.vsix` installer:
+```bash
+npx @vscode/vsce package
+```
+
+---
+
+**Built with ❤️ for developers who love clean commit histories.**
