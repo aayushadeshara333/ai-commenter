@@ -108,6 +108,7 @@ Provide an authoritative commit message for the changes.
 
 Rules:
 * ABSOLUTE MAXIMUM of 15 words.
+* Do include it is AI comment.
 * Direct and to the point.
 * Do not include pleasantries.
 * Provide only the raw commit message text.
