@@ -3,7 +3,7 @@
     "displayName": "AI Commenter",
     "publisher": "aayushadeshara",
     "description": "Reads git diffs and generates AI-powered comments explaining the changes.",
-    "version": "1.0.3",
+    "version": "1.0.5",
     "repository": {
         "type": "git",
         "url": "https://github.com/aayushadeshara/ai-commenter"
