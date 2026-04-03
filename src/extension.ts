@@ -29,7 +29,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       // Error Handling: Empty diff
       if (!diff || diff.trim() === '') {
-        vscode.window.showInformationMessage('AI Commenter: No git diff found. Make some changes first.');
+        vscode.window.showInformationMessage('AI Commenter: No staged changes found. Please stage your changes first.');
         return;
       }
 
@@ -73,12 +73,12 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 /**
- * Executes `git diff` in the given directory.
- * We use 'git diff HEAD' to capture both staged and unstaged changes.
+ * Executes `git diff --cached` in the given directory.
+ * We use '--cached' to capture only staged changes.
  */
 async function getGitDiff(cwd: string): Promise<string> {
   try {
-    const { stdout } = await exec('git diff HEAD', { cwd });
+    const { stdout } = await exec('git diff --cached', { cwd });
     return stdout;
   } catch (error) {
     throw new Error('Failed to run git diff. Ensure you are in a git repository.');
