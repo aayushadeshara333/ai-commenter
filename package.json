@@ -24,6 +24,13 @@
                 "title": "AI: Generate Commit Message"
             }
         ],
+        "keybindings": [
+            {
+                "command": "aiCommenter.generate",
+                "key": "ctrl+shift+c",
+                "mac": "cmd+shift+c"
+            }
+        ],
         "configuration": {
             "title": "AI Commenter",
             "properties": {
