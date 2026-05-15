@@ -2,8 +2,8 @@
     "name": "ai-commenter",
     "displayName": "AI Commenter",
     "publisher": "aayushadeshara",
-    "description": "Reads git diffs and generates AI-powered comments explaining the changes.",
-    "version": "1.0.5",
+    "description": "AI-powered git commit messages and prompt optimization for coding agents.",
+    "version": "1.1.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/aayushadeshara/ai-commenter"
@@ -23,7 +23,9 @@
         "commit",
         "mistral",
         "branch",
-        "productivity"
+        "productivity",
+        "prompt",
+        "optimizer"
     ],
     "activationEvents": [],
     "main": "./out/extension.js",
@@ -32,6 +34,10 @@
             {
                 "command": "aiCommenter.generate",
                 "title": "AI: Generate Commit Message"
+            },
+            {
+                "command": "aiCommenter.optimizePrompt",
+                "title": "AI: Optimize Selected Prompt"
             }
         ],
         "keybindings": [
@@ -39,6 +45,11 @@
                 "command": "aiCommenter.generate",
                 "key": "ctrl+shift+c",
                 "mac": "cmd+shift+c"
+            },
+            {
+                "command": "aiCommenter.optimizePrompt",
+                "key": "ctrl+shift+p",
+                "mac": "cmd+shift+p"
             }
         ],
         "configuration": {
